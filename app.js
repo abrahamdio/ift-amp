@@ -4,7 +4,9 @@ const port = process.env.PORT || 3000;
 
 const sampleJson = {
     items: [
-        {a: 123}
+        {timeSlot: "1PM-2PM", scheduled: true},
+        { timeSlot: "4PM-6PM", scheduled: true },
+        { timeSlot: "10PM-11PM", scheduled: false },
     ]
 }
 
@@ -44,7 +46,7 @@ app.use(function (req, res, next) {
 app.get('/', (req, res) => res.send('Hello World!'))
 app.get('/timeslot', (req, res) => res.json(sampleJson))
 app.get('/increase', (req, res) => {
-    sampleJson.items.push({ b: 123 });
+    sampleJson.items.push({timeSlot: "1AM-2AM", scheduled: false });
     res.json(sampleJson);
 })
 app.get('/amp', (req, res) => res.json(ampJson));
