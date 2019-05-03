@@ -7,7 +7,7 @@ const sampleJson = {
         {a: 123}
     ]
 }
-
+app.get('/', (req, res) => res.send('Hello World!'))
 app.get('/timeslot', (req, res) => res.json(sampleJson))
 app.get('/increase', (req, res) => {
     sampleJson.items.push({ b: 123 });
