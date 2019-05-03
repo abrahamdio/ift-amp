@@ -21,7 +21,7 @@
         <button on="tap:myList.refresh">Refresh List</button>
         <amp-list id="myList" src="https://ift-amp.herokuapp.com/timeslot" layout="fixed-height" height="80">
             <template type="amp-mustache">
-                <div>{{timeSlot}} -
+                <div>{{timeslot}} -
                     {{#scheduled}}
                         <b>Booked</b>
                     {{/scheduled}}

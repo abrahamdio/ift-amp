@@ -4,9 +4,9 @@ const port = process.env.PORT || 3000;
 
 const sampleJson = {
     items: [
-        { timeSlot: "1PM-2PM", scheduled: false },
-        { timeSlot: "4PM-6PM", scheduled: false },
-        { timeSlot: "10PM-11PM", scheduled: false },
+        { timeslot: "1PM-2PM", scheduled: false },
+        { timeslot: "4PM-6PM", scheduled: false },
+        { timeslot: "10PM-11PM", scheduled: false },
     ]
 }
 
