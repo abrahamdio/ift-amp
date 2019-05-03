@@ -45,6 +45,8 @@ app.post('/updateTimeslot', function (req, res) {
     sampleJson.items.forEach(item => {
         if (item.timeslot === bookedTime) {
             item.scheduled = true;
+        } else {
+            item.scheduled = false;
         }
     })
     res.json({ok: true})

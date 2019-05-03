@@ -19,7 +19,7 @@
         <input type="submit"
             value="Add Timeslot">
     </form>
-    <form id="booking-form" method="post" action-xhr="https://ift-amp.herokuapp.com/updateTimeslot">
+    <form id="booking-form" method="post" action-xhr="https://ift-amp.herokuapp.com/updateTimeslot" on="submit-success:myList.refresh">
         <amp-list id="myList" src="https://ift-amp.herokuapp.com/timeslot" layout="fixed-height" height="80">
             <template type="amp-mustache">
                 <div>{{timeslot}} -
