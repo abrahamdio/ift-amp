@@ -18,19 +18,6 @@
             required>
         <input type="submit"
             value="Add Timeslot">
-        <button on="tap:myList.refresh">Refresh List</button>
-        <amp-list id="myList" src="https://ift-amp.herokuapp.com/timeslot" layout="fixed-height" height="80">
-            <template type="amp-mustache">
-                <div>{{timeslot}} -
-                    {{#scheduled}}
-                        <b>Booked</b>
-                    {{/scheduled}}
-                    {{^scheduled}}
-                        Available
-                    {{/scheduled}}    
-                </div>
-            </template>
-        </amp-list>
         <div submit-success>
             <template type="amp-mustache">
                 Success!
@@ -42,5 +29,18 @@
             </template>
         </div>
     </form>
+    <amp-list id="myList" src="https://ift-amp.herokuapp.com/timeslot" layout="fixed-height" height="80">
+        <template type="amp-mustache">
+            <div>{{timeslot}} -
+                {{#scheduled}}
+                    <b>Booked</b>
+                {{/scheduled}}
+                {{^scheduled}}
+                    Available
+                {{/scheduled}}    
+            </div>
+        </template>
+    </amp-list>
+    <button on="tap:myList.refresh">Refresh List</button>
 </body>
 </html>

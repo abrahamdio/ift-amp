@@ -27,7 +27,12 @@ app.get('/increase', (req, res) => {
     sampleJson.items.push({timeSlot: "1AM-2AM", scheduled: false });
     res.json(sampleJson);
 })
-app.get('/amp', (req, res) => res.json(ampJson));
+
+app.get('/clear', (req, res) => {
+    sampleJson.items = []
+    res.send('cleared')
+});
+
 app.post('/addTimeslot', function (req, res) {
     const newTime = req.body.timeslot;
     const newTimeslot = {timeslot: newTime, scheduled: false}
