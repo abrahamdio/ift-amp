@@ -13,11 +13,11 @@
   Check out these latest deals from our store!
     <form method="post" action-xhr="https://ift-amp.herokuapp.com/addTimeslot" on="submit-success:myList.refresh">
         <input type="text"
-            name="Add Timeslot"
+            name="timeslot"
             placeholder="10AM-11AM"
             required>
         <input type="submit"
-            value="Subscribe">
+            value="Add Timeslot">
         <button on="tap:myList.refresh">Refresh List</button>
         <amp-list id="myList" src="https://ift-amp.herokuapp.com/timeslot" layout="fixed-height" height="80">
             <template type="amp-mustache">

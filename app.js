@@ -10,32 +10,6 @@ const sampleJson = {
     ]
 }
 
-const ampJson = {
-    "items": [
-        {
-            "fullname": "John Doe",
-            "phonenumber": "212-555-1212",
-            "cart_items": [
-                {
-                    "name": "Pluot",
-                    "quantity": 5,
-                    "price": "$1.00"
-                },
-                {
-                    "name": "Apple",
-                    "quantity": 1,
-                    "price": "$3.25"
-                }
-            ],
-            "address": {
-                "addr1": "111 8th Ave",
-                "city": "New York",
-                "state": "NY",
-                "zipcode": 10011
-            }
-        }
-    ]
-};
 app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
@@ -55,6 +29,9 @@ app.get('/increase', (req, res) => {
 })
 app.get('/amp', (req, res) => res.json(ampJson));
 app.post('/addTimeslot', function (req, res) {
+    const newTime = req.body.timeslot;
+    const newTimeslot = {timeslot: newTime, scheduled: false}
+    sampleJson.items.push(newTimeslot);
     res.json({ requestBody: req.body })
 });
 
