@@ -4,8 +4,8 @@ const port = process.env.PORT || 3000;
 
 const sampleJson = {
     items: [
-        {timeSlot: "1PM-2PM", scheduled: true},
-        { timeSlot: "4PM-6PM", scheduled: true },
+        { timeSlot: "1PM-2PM", scheduled: false },
+        { timeSlot: "4PM-6PM", scheduled: false },
         { timeSlot: "10PM-11PM", scheduled: false },
     ]
 }
@@ -43,6 +43,10 @@ app.use(function (req, res, next) {
     res.header("amp-access-control-allow-source-origin", "amp@gmail.dev");
     next();
 });
+
+app.use(express.json())
+app.use(express.urlencoded());
+
 app.get('/', (req, res) => res.send('Hello World!'))
 app.get('/timeslot', (req, res) => res.json(sampleJson))
 app.get('/increase', (req, res) => {
@@ -50,5 +54,8 @@ app.get('/increase', (req, res) => {
     res.json(sampleJson);
 })
 app.get('/amp', (req, res) => res.json(ampJson));
+app.post('/addTimeslot', function (req, res) {
+    res.json({ requestBody: req.body })
+});
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
