@@ -17,8 +17,8 @@
 
 <body>
     <form id="myform" method="post" action-xhr="https://ift-amp.herokuapp.com/addTimeslot"
-        on="submit-success:myList.refresh">
-        <input type="text" name="timeslot" placeholder="10AM-11AM" required>
+        on="submit-success:myList.refresh;submit:myform.clear">
+        <input id="timeslotInput" type="text" name="timeslot" placeholder="10AM-11AM" required>
         <input type="submit" value="Add Timeslot">
     </form>
     <form id="booking-form" method="post" action-xhr="https://ift-amp.herokuapp.com/updateTimeslot"
