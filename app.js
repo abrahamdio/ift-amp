@@ -40,4 +40,14 @@ app.post('/addTimeslot', function (req, res) {
     res.json({ requestBody: req.body })
 });
 
+app.post('/updateTimeslot', function (req, res) {
+    const bookedTime = req.body.timeslot;
+    sampleJson.items.forEach(item => {
+        if (item.timeslot === bookedTime) {
+            item.scheduled = true;
+        }
+    })
+    res.json({ok: true})
+});
+
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
