@@ -25,12 +25,9 @@
         on="submit-success:myList.refresh">
         <amp-list id="myList" src="https://ift-amp.herokuapp.com/timeslot" layout="flex-item" width="500" height="120">
             <template type="amp-mustache">
-                <div>{{timeslot}} -
+                <div>{{timeslot}}
                     {{#scheduled}}
-                    <b>Booked</b>
-                    {{/scheduled}}
-                    {{^scheduled}}
-                    <input name="timeslot" value="{{timeslot}}" type="radio" on="change:booking-form.submit">
+                    - <b>Booked</b>
                     {{/scheduled}}
                 </div>
             </template>
